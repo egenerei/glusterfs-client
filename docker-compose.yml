@@ -2,28 +2,28 @@ services:
   ubuntu:
     image: ubuntu:latest
     container_name: ubuntu
-    privileged: true
     networks:
       local-net:
         ipv4_address: 192.168.3.102
+    privileged: true
     tty: true
 
   gs1-server:
-    image: glusterfs
+    image: egenerei6/glusterfs-ubuntu
     container_name: gs1-server
-    privileged: true
     volumes:
       - ./volumes/server1:/data
+    privileged: true
     networks:
       local-net:
         ipv4_address: 192.168.3.100
 
   gs2-server:
-    image: glusterfs
+    image: egenerei6/glusterfs-ubuntu
     container_name: gs2-server
-    privileged: true
     volumes:
       - ./volumes/server2:/data
+    privileged: true
     networks:
       local-net:
         ipv4_address: 192.168.3.101

@@ -2,7 +2,7 @@
 export IP_GS1="192.168.3.100"
 export IP_GS2="192.168.3.101"
 
-
+docker compose up -d 
 docker exec -t gs1-server gluster peer probe $IP_GS1
 docker exec -t gs1-server gluster peer probe $IP_GS2
 docker exec -t gs1-server gluster volume create gv0 replica 2 $IP_GS1:/data/brick1 $IP_GS2:/data/brick1 force

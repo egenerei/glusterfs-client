@@ -14,4 +14,4 @@ EXPOSE 24007 24008 49152
 
 # Set entrypoint
 CMD ["glusterd", "-N"]
-#CMD ["tail", "-f", "/dev/null"]
+
